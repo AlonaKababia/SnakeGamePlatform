@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Media;
 using WMPLib;
+using System.Deployment.Application;
 
 namespace SnakeGamePlatform
 {
-    
-    public class GameEvents:IGameEvents
+
+    public class GameEvents : IGameEvents
     {
         //Define game variables here! for example...
         //GameObject [] snake;
         TextLabel lblScore;
         GameObject food;
+        GameObject dogBody;
+        GameObject dog;
+        int points = 0, countEaten = 0;
+
 
         //This function is called by the game one time on initialization!
         //Here you should define game board resolution and size (x,y).
@@ -37,11 +42,25 @@ namespace SnakeGamePlatform
             board.AddLabel(lblScore);
 
             //Adding Game Object
-            Position foodPosition = new Position(200, 100);
-            food = new GameObject(foodPosition, 20, 20);
+            //dogBody
+            Position dogBodyPosition = new Position(200, 100);
+            dogBody = new GameObject(dogBodyPosition, 30, 30);
+            dogBody.SetImage(Properties.Resources.dogBody);
+            dogBody.direction = GameObject.Direction.RIGHT;
+            board.AddGameObject(dogBody);
+            //DogHead
+            Position dogPosition = new Position(200, 130);
+            dog = new GameObject(dogPosition, 30, 30);
+            dog.SetImage(Properties.Resources.dog);
+            dog.direction = GameObject.Direction.RIGHT;
+            board.AddGameObject(dog);
+            //food
+            Position foodPosition = new Position(200, 450);
+            food = new GameObject(foodPosition, 30, 30);
             food.SetImage(Properties.Resources.food);
             food.direction = GameObject.Direction.RIGHT;
             board.AddGameObject(food);
+
 
             //Play file in loop!
             board.PlayBackgroundMusic(@"\Images\gameSound.wav");
@@ -51,19 +70,61 @@ namespace SnakeGamePlatform
 
             //Start game timer!
             board.StartTimer(50);
+            {
+                dogBody.SetImage(Properties.Resources.dogBody);
+                dog.SetImage(Properties.Resources.dog);
+                food.SetImage(Properties.Resources.food);
+                //eating
+                bool isEating = dog.IntersectWith(food);
+                if(isEating==true)
+                {
+                    Random rnd= new Random();
+                    int x = rnd.Next(0, 601);
+                    foodPosition = new Position(x, x);
+                    food = new GameObject(foodPosition, 30, 30);
+                    food.SetImage(Properties.Resources.food);
+                    food.direction = GameObject.Direction.RIGHT;
+                    board.AddGameObject(food);
+                    //points and golden prezel
+                    points = points + 100;
+                    countEaten++;
+                    if (countEaten%5==0)
+                    {
+
+                    }
+
+                }
+            }
         }
-        
-        
+
+
         //This function is called frequently based on the game board interval that was set when starting the timer!
         //Use this function to move game objects and check collisions
         public void GameClock(Board board)
         {
-            Position foodPosition = food.GetPosition();
-            if (food.direction == GameObject.Direction.RIGHT)
-                foodPosition.Y = foodPosition.Y + 5;
-            else
-                foodPosition.Y = foodPosition.Y - 5;
-            food.SetPosition(foodPosition);
+            Position dogPosition = dog.GetPosition();
+            if (dog.direction == GameObject.Direction.RIGHT)
+            {
+                dogPosition.Y = dogPosition.Y + 5;
+                dog.SetPosition(dogPosition);
+            }
+            if (dog.direction == GameObject.Direction.LEFT)
+            {
+
+                dogPosition.Y = dogPosition.Y - 5;
+                dog.SetPosition(dogPosition);
+            }
+            if (dog.direction == GameObject.Direction.UP)
+            { 
+                dogPosition.X = dogPosition.X - 5;
+                dog.SetPosition(dogPosition);
+            }
+            if (dog.direction == GameObject.Direction.DOWN)
+            { 
+                dogPosition.X = dogPosition.X + 5; 
+                dog.SetPosition(dogPosition);
+            }
+
         }
 
         //This function is called by the game when the user press a key down on the keyboard.
@@ -73,9 +134,13 @@ namespace SnakeGamePlatform
         public void KeyDown(Board board, char key)
         {
             if (key == (char)ConsoleKey.LeftArrow)
-                food.direction = GameObject.Direction.LEFT;
+                dog.direction = GameObject.Direction.LEFT;
             if (key == (char)ConsoleKey.RightArrow)
-                food.direction = GameObject.Direction.RIGHT;
+                dog.direction = GameObject.Direction.RIGHT;
+            if (key == (char)ConsoleKey.UpArrow)
+               dog.direction = GameObject.Direction.UP;
+            if (key == (char)ConsoleKey.DownArrow)
+               dog.direction = GameObject.Direction.DOWN;
         }
     }
 }

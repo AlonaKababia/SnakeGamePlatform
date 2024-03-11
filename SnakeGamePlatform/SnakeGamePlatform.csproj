@@ -138,12 +138,16 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\backgroundMusic.mp4" />
     <Content Include="Images\dog.png" />
     <Content Include="Images\dogBody.png" />
+    <Content Include="Images\eating.wav" />
+    <Content Include="Images\greenBackground.png" />
     <Content Include="Images\kuku.mp3" />
     <Content Include="Images\kuku.wav" />
     <Content Include="Images\pretzeles.png" />
     <Content Include="Images\superFood.jpg" />
+    <Content Include="Images\superFoodSound.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

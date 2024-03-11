@@ -112,6 +112,16 @@ namespace SnakeGamePlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap greenBackground {
+            get {
+                object obj = ResourceManager.GetObject("greenBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap superFood {
             get {
                 object obj = ResourceManager.GetObject("superFood", resourceCulture);

@@ -87,5 +87,9 @@ namespace SnakeGamePlatform
                 this.picBox.Top + this.picBox.Height > board.GetBoard().ClientRectangle.Height ||
                 !this.picBox.Bounds.IntersectsWith(board.GetBoard().ClientRectangle));
         }
+        public Image GetImage()
+        {
+            return this.picBox.Image;
+        }
     }
 }

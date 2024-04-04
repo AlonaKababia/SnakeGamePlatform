@@ -74,20 +74,20 @@
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TextLabel.cs" />
     <EmbeddedResource Include="GameBoard.resx">
       <DependentUpon>GameBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,19 +138,26 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\backgroundMusic.mp4" />
-    <Content Include="Images\biscuit.png" />
     <Content Include="Images\BuckinghamPalace.jpg" />
+    <None Include="Images\superFood.png" />
+    <None Include="Images\superFoodSound.wav" />
+    <None Include="Images\syria.wav" />
+    <None Include="Images\bulldogPixile.png" />
+    <None Include="Images\bus.jpg" />
+    <None Include="Images\crown.jpg" />
     <Content Include="Images\dogBody.png" />
     <Content Include="Images\dogHat.png" />
-    <Content Include="Images\eating.wav" />
+    <None Include="Images\dogPixile.png" />
+    <None Include="Images\eatingMusic.wav" />
+    <None Include="Images\food.jpg" />
+    <None Include="Images\gameOverSound.wav" />
     <Content Include="Images\greenBackground.png" />
     <Content Include="Images\kuku.mp3" />
     <Content Include="Images\kuku.wav" />
+    <None Include="Images\paw.jpeg" />
+    <Content Include="Images\pauseMusic.mp4" />
     <Content Include="Images\pretzeles.png" />
     <Content Include="Images\superFood.jpg" />
-    <Content Include="Images\superFoodSound.mp4" />
-    <Content Include="Images\syria.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

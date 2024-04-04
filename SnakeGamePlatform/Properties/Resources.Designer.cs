@@ -73,9 +73,9 @@ namespace SnakeGamePlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap biscuit {
+        internal static System.Drawing.Bitmap BuckinghamPalace {
             get {
-                object obj = ResourceManager.GetObject("biscuit", resourceCulture);
+                object obj = ResourceManager.GetObject("BuckinghamPalace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,29 @@ namespace SnakeGamePlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BuckinghamPalace {
+        internal static System.Drawing.Bitmap bulldogPixile {
             get {
-                object obj = ResourceManager.GetObject("BuckinghamPalace", resourceCulture);
+                object obj = ResourceManager.GetObject("bulldogPixile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bus {
+            get {
+                object obj = ResourceManager.GetObject("bus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crown {
+            get {
+                object obj = ResourceManager.GetObject("crown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -111,11 +131,30 @@ namespace SnakeGamePlatform.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dogPixile {
+            get {
+                object obj = ResourceManager.GetObject("dogPixile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream eat {
             get {
                 return ResourceManager.GetStream("eat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream eatingMusic {
+            get {
+                return ResourceManager.GetStream("eatingMusic", resourceCulture);
             }
         }
         
@@ -130,11 +169,40 @@ namespace SnakeGamePlatform.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gameOverSound {
+            get {
+                return ResourceManager.GetStream("gameOverSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap greenBackground {
             get {
                 object obj = ResourceManager.GetObject("greenBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pauseMusic {
+            get {
+                object obj = ResourceManager.GetObject("pauseMusic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paw {
+            get {
+                object obj = ResourceManager.GetObject("paw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +214,24 @@ namespace SnakeGamePlatform.Properties {
             get {
                 object obj = ResourceManager.GetObject("superFood", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream superFoodSound {
+            get {
+                return ResourceManager.GetStream("superFoodSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream syria {
+            get {
+                return ResourceManager.GetStream("syria", resourceCulture);
             }
         }
     }

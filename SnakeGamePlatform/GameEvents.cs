@@ -31,6 +31,7 @@ namespace SnakeGamePlatform
         int timerCounter = 0, current = 0;
         const int START = 20, MID = 160, HARD = 110;
         string difficulty = "difficulty: easy";
+        const string FontNotForTitle = "Aharoni";
         Direction dirImg = Direction.RIGHT;
         #endregion
         //This function is called by the game one time on initialization!
@@ -49,7 +50,7 @@ namespace SnakeGamePlatform
             //Name of game lbl first part
             Position NameOfGamePos1 = new Position(300, 240);
             lblNameOfGame1 = new TextLabel("Pa", NameOfGamePos1);
-            lblNameOfGame1.SetFont("Britannic Bold", 27);
+            lblNameOfGame1.SetFont("Britannic bold", 27);
             //Name of game the paw image
             Position NameOfGamePawPos = new Position(300, 295);
             paw = new GameObject(NameOfGamePawPos, 35, 40);
@@ -57,33 +58,33 @@ namespace SnakeGamePlatform
             //Name of game lbl second part
             Position NameOfGamePos2 = new Position(300, 330);
             lblNameOfGame2 = new TextLabel("s in the palace", NameOfGamePos2);
-            lblNameOfGame2.SetFont("Britannic Bold", 27);
+            lblNameOfGame2.SetFont("Britannic bold", 27);
             //names lbl
             Position creditPos = new Position(200, 60);
             lblStartCredit = new TextLabel("Yonatan Volsky, Itamar Goffer, Alona Kababia and Noa Avitov", creditPos);
-            lblStartCredit.SetFont("Ariel", 18);
+            lblStartCredit.SetFont(FontNotForTitle, 16);
             board.AddLabel(lblStartCredit);
             //PRESENTS lbl
             Position lblPresentPos = new Position(260, 270);
             lblPresent = new TextLabel("PRESENT:", lblPresentPos);
-            lblPresent.SetFont("Tauri", 25);
+            lblPresent.SetFont(FontNotForTitle, 25);
             board.AddLabel(lblPresent);
             //score lbl
             Position labelPosition = new Position(10, 10);
             lblScore = new TextLabel($"Score: {points.ToString()}", labelPosition);
-            lblScore.SetFont("Ariel", 14);
+            lblScore.SetFont(FontNotForTitle, 14);
             //game over lbl
             Position labelEndPosition = new Position(260, 210);
-            lblEnd = new TextLabel("Game Over! Press r to reset", labelEndPosition);
-            lblEnd.SetFont("Ariel", 25);
+            lblEnd = new TextLabel("Game Over! Press R to reset", labelEndPosition);
+            lblEnd.SetFont(FontNotForTitle, 25);
             //difficulty lbl
             Position labelDifPos = new Position(10, 120);
             lblDifficulty = new TextLabel(difficulty, labelDifPos);
-            lblDifficulty.SetFont("Ariel", 14);
+            lblDifficulty.SetFont(FontNotForTitle, 14);
             //pause lbl
             Position labelPausePosition = new Position(10, 300);
-            lblPause = new TextLabel("Paused, press spacebar to unpause", labelPausePosition);
-            lblPause.SetFont("Ariel", 14);
+            lblPause = new TextLabel("Paused, press spacebar to npause", labelPausePosition);
+            lblPause.SetFont(FontNotForTitle, 14);
             //game objects
             //upwall
             Position upWallPos = new Position(0, 0);
@@ -121,6 +122,8 @@ namespace SnakeGamePlatform
             board.StartTimer(timerInterval);
             //מוזיקת מסך פתיחה
             board.PlayBackgroundMusic(@"\Images\pauseMusic.mp4");
+            //Background color credits
+            board.SetBackgroundColor(Color.Crimson);
         }
 
 
@@ -134,6 +137,7 @@ namespace SnakeGamePlatform
                 board.RemoveLabel(lblStartCredit); // after credit screen, removing and adding labels&game objects
                 board.RemoveLabel(lblPresent);
                 board.RemoveLabel(lblEnd);
+                board.SetBackgroundColor(Color.White);
                 board.AddLabel(lblScore);
                 board.AddLabel(lblDifficulty);
                 board.AddGameObject(upWall); board.AddGameObject(leftWall); board.AddGameObject(downWall); board.AddGameObject(rightWall);
@@ -158,7 +162,7 @@ namespace SnakeGamePlatform
                     board.AddLabel(lblNameOfGame2);
                     Position startGameSentence = new Position(10, 400);
                     lblStart = new TextLabel("Press the space bar of the game to start", startGameSentence);
-                    lblStart.SetFont("Ariel", 14);
+                    lblStart.SetFont(FontNotForTitle, 14);
                     board.AddLabel(lblStart);
                     #endregion
                 }
@@ -208,9 +212,9 @@ namespace SnakeGamePlatform
                             if (countEaten % BONUS == BONUS - 1)
                             {
                                 board.RemoveLabel(lblGoodMsg);
-                                Random superMsg= new Random();
-                                int imgNum=superMsg.Next(1,4);
-                                lblSuper=SuperImgAndMsg(board, imgNum,food);
+                                Random superMsg = new Random();
+                                int imgNum = superMsg.Next(1, 4);
+                                lblSuper = SuperImgAndMsg(board, imgNum, food);
                             }
                             dog = AddBody(dog, board);
                             countEaten++;
@@ -280,7 +284,7 @@ namespace SnakeGamePlatform
                         }
                         board.RemoveGameObject(food);
                         board.RemoveLabel(lblGoodMsg);
-                        if(countEaten % BONUS == 0 && countEaten != 0) { board.RemoveLabel(lblSuper); }
+                        if (countEaten % BONUS == 0 && countEaten != 0) { board.RemoveLabel(lblSuper); }
                         board.AddLabel(lblEnd);
                         food.SetImage(Properties.Resources.food);
                         countEaten = 0;
@@ -433,7 +437,7 @@ namespace SnakeGamePlatform
             if (x == 3) { msg = "Amazing!"; }
             Position msgPos = new Position(10, 630);
             TextLabel lblGoodMsg = new TextLabel(msg, msgPos);
-            lblGoodMsg.SetFont("Ariel", 14);
+            lblGoodMsg.SetFont(FontNotForTitle, 14);
             board.AddLabel(lblGoodMsg);
             return lblGoodMsg;
         }

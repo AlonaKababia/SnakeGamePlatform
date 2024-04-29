@@ -223,6 +223,7 @@ namespace SnakeGamePlatform
                         #endregion
                         #region difficulty
                         if (timerInterval > 75) // adding difficulty
+
                         {
                             timerInterval -= 5;
                             board.StartTimer(timerInterval);

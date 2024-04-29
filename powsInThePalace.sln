@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2050
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeGamePlatform", "SnakeGamePlatform\SnakeGamePlatform.csproj", "{612873D4-CA45-4CFD-B426-ED354FE57438}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "powsInThePalace", "SnakeGamePlatform\powsInThePalace.csproj", "{612873D4-CA45-4CFD-B426-ED354FE57438}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

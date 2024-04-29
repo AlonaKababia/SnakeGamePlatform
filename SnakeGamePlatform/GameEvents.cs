@@ -65,7 +65,7 @@ namespace SnakeGamePlatform
             lblStartCredit.SetFont(FontNotForTitle, 16);
             board.AddLabel(lblStartCredit);
             //PRESENTS lbl
-            Position lblPresentPos = new Position(260, 270);
+            Position lblPresentPos = new Position(260, 300);
             lblPresent = new TextLabel("PRESENT:", lblPresentPos);
             lblPresent.SetFont(FontNotForTitle, 25);
             board.AddLabel(lblPresent);
@@ -83,7 +83,7 @@ namespace SnakeGamePlatform
             lblDifficulty.SetFont(FontNotForTitle, 14);
             //pause lbl
             Position labelPausePosition = new Position(10, 300);
-            lblPause = new TextLabel("Paused, press spacebar to npause", labelPausePosition);
+            lblPause = new TextLabel("Paused, press spacebar to unpause", labelPausePosition);
             lblPause.SetFont(FontNotForTitle, 14);
             //game objects
             //upwall
@@ -330,6 +330,7 @@ namespace SnakeGamePlatform
                     {
                         board.StopTimer();
                         board.AddLabel(lblPause);
+                        lblPause.LabelControl.BringToFront();
                         board.PlayBackgroundMusic(@"\Images\pauseMusic.mp4");
                         isPaused = true;
                     }
@@ -460,9 +461,9 @@ namespace SnakeGamePlatform
                 food.SetImage(Properties.Resources.crown);
                 imgMsg = "Can you steal the queen's crown??";
             }
-            Position msgPos = new Position(10, 350);
+            Position msgPos = new Position(10, 300);
             TextLabel superMsg = new TextLabel(imgMsg, msgPos);
-            superMsg.SetFont("Ariel", 14);
+            superMsg.SetFont("FontNotForTitle", 14);
             board.AddLabel(superMsg);
             return superMsg;
         }
